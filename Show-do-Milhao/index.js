@@ -382,6 +382,28 @@ function gerenciarJogo() {
     }
 }
 
+// Função para jogar novamente
+function jogarNovamente() {
+    rl.question('\nVocê gostaria de jogar novamente? (1) Sim / (2) Não: ', (resposta) => {
+        if (resposta == '1') {
+            rodadaAtual = 0;
+            perguntaAtual = 0;
+            premioAtual = 0;
+            pulos = 3;
+            condicaototal = 0;
+            condicaouniversitario = 0;
+            condicaoplacas = 0;
+            condicaocartas = 0;
+            iniciarJogo();
+        } else if (resposta === '2') {
+            rl.close();
+        } else {
+            console.log('\n**** Opção inválida. Tente novamente. ****');
+            jogarNovamente();
+        }
+    });
+}
+
 // Função para encerrar o jogo
 function encerrarJogo() {
     console.log('\n**** Fim do jogo, ' + nomeJogador + '! ****\n');
@@ -405,24 +427,7 @@ function encerrarJogo() {
     ranking.forEach((jogador, index) => {
         console.log(`${index + 1}. ${jogador.nome} - R$ ${jogador.premio}`);
     });
-
-    rl.question('\nVocê gostaria de jogar novamente? (1) Sim / (2) Não: ', (resposta) => {
-        if (resposta == '1') {
-            rodadaAtual = 0;
-            perguntaAtual = 0;
-            premioAtual = 0;
-            pulos = 3;
-            condicaototal = 0;
-            condicaouniversitario = 0;
-            condicaoplacas = 0;
-            condicaocartas = 0;
-            iniciarJogo();
-        } else if (resposta === '2') {
-            rl.close();
-        } else {
-            console.log('Opção inválida. Tente novamente.');
-        }
-    });
+    jogarNovamente();
 }
 
 iniciarJogo();
