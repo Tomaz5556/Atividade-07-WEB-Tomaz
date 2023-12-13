@@ -66,7 +66,7 @@ O projeto é baseado no famoso game show brasileiro que testa o conhecimento dos
 
 - Tenha instalado o Node.js
 - Clone o repositório `git clone https://github.com/Tomaz5556/Atividade-07-WEB-Tomaz.git`
-- Execute o comando para ir até o diretório do projeto `cd ****/Show-do-Milhao` 
+- Execute o comando para ir até a pasta do projeto `cd Show-do-Milhao` 
 - Depois execute o comando `npm start`
 
 <div id='autor'/> 
